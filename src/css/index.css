@@ -1,0 +1,50 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.projectionDate{
+  margin-top: 6%;
+}
+
+.movies-by-hours{
+  margin-top: 2%;
+}
+
+.movie img {
+  width: 100px;
+}
+
+.movie {
+  margin: 1%;
+}
+
+.movie .card-title {
+  font-size: 24px !important;
+}
+
+.movie .length {
+  font-size: 1em !important;
+}
+
+/* Media query for mobile phones */
+@media (max-width: 767px) {
+  .movie .btn-book {
+    margin: 5%;
+    /* Adjust the font size for mobile devices */
+  }
+
+  .movie img {
+    width: 200px;
+  }
+
+  .movie {
+    width: 200px;
+  }
+
+  .movies-by-hours{
+    margin-top: 5%;
+  }
+  
+}
