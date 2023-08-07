@@ -7,6 +7,8 @@ import Test from "../components/Test";
 
 export default function ProjectionsTimetable({ projections, date }) {
 
+    const s = useStates('main');
+
     function getDayOfWeek(dateString) {
         const date = new Date(dateString);
         const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -28,27 +30,27 @@ export default function ProjectionsTimetable({ projections, date }) {
     }
 
     return (
-        <div className='projectionDate' >
-            <div className='movies-by-date'>
-                <h3 className='movies-week-day'>{getDayOfWeek(date)} </h3>
-                <h4 className='movies-date'>{formatDate(date)} </h4>
-                {Object.keys(projections[date]).map(hour => (
-                    <div key={hour} >
 
-                        {Object.keys(projections[date][hour]).map(minutes => (
-                            <div className='movies-by-hours' key={`${hour}-${minutes}`}>
-                                <h4>{hour} : {minutes}</h4>
+        <div className='movies-by-date'>
+            <h3 className='movies-week-day-title'>{getDayOfWeek(date)} </h3>
+            <h4 className='movies-date-title'>{formatDate(date)} </h4>
+            {Object.keys(projections[date]).map(hour => (
+                <div key={hour} >
 
-                                <div className='movies'>
-                                    {projections[date][hour][minutes].map(projection => (
-                                        <Movie key={projection.id} projection={projection} />
-                                    ))}
-                                </div>
+                    {Object.keys(projections[date][hour]).map(minutes => (
+                        <div className='movies-by-hours' key={`${hour}-${minutes}`}>
+                            <h4>{hour} : {minutes}</h4>
+
+                            <div className='movies'>
+                                {projections[date][hour][minutes].map(projection => (
+                                    <Movie key={projection.id} projection={projection} />
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                ))}
-            </div>
+                        </div>
+                    ))}
+                </div>
+            ))}
         </div>
+
     )
 }
