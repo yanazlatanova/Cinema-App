@@ -1,0 +1,15 @@
+.movie {
+    margin: 1%;
+}
+
+.movie img {
+    width: 100px;
+}
+
+.movie .card-title {
+    font-size: 24px !important;
+}
+
+.movie .length {
+    font-size: 1em !important;
+}

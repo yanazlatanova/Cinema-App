@@ -4,39 +4,6 @@
   font-weight: 400;
 }
 
-.projectionDate{
-  margin-top: 6%;
-}
-
-.movies-by-hours{
-  margin-top: 2%;
-}
-
-.movie img {
-  width: 100px;
-}
-
-.movie {
-  margin: 1%;
-}
-
-.movie .card-title {
-  font-size: 24px !important;
-}
-
-.movie .length {
-  font-size: 1em !important;
-}
-
-.movies-week-day {
-  font-size: 40px !important;
-}
-
-.movies-date {
-  color: rgba(33, 37, 41, 0.75);
-  font-size: larger;
-}
-
 /* Media query for mobile phones */
 @media (max-width: 767px) {
   .movie .btn-book {
@@ -54,6 +21,5 @@
 
   .movies-by-hours{
     margin-top: 5%;
-  }
-  
+  }  
 }

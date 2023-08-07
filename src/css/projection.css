@@ -1,0 +1,16 @@
+.movies-by-date {
+    margin-top: 3%;
+}
+
+.movies-week-day-title {
+    font-size: 40px !important;
+}
+
+.movies-date-title {
+    color: rgba(33, 37, 41, 0.75);
+    font-size: larger;
+}
+
+.movies-by-hours {
+    margin-top: 2%;
+}
