@@ -12,7 +12,9 @@ export default function Projections() {
 
   const s = useStates('main', {
     movies: [],
-    screenings: []
+    screenings: [],
+    categories: [],
+    selectedCategory: ''
   });
 
   // Run only on a hard reload when all applications start
@@ -20,8 +22,13 @@ export default function Projections() {
     (async () => {
       s.movies = await (await (fetch('/api/movies'))).json();
       s.screenings = await (await (fetch('/api/screenings'))).json();
+      s.categories = await (await (fetch('/api/categories'))).json();
     })();
   }, []);
+
+  const handleSelectChange = (event) => {
+    s.selectedCategory = event.target.value;
+  };
 
   function getSortedProjections() {
     // Get screenings sorted by date, hour and minutes
@@ -31,9 +38,12 @@ export default function Projections() {
       const date = screening.time.slice(0, 10)
       const hour = screening.time.slice(11, 13)
       const minutes = screening.time.slice(14, 16);
+      const movie = s.movies.find(m => m.id === screening.movieId)
 
-      // console.log(date, hour, minutes);
-      // const movie = s.movies.find(movie => movie.id === screening.movieId)
+      // Skip the movies that are not from the selecte category
+      if (s.selectedCategory && movie && !movie.description.categories.includes(s.selectedCategory)) {
+        return;
+      }
 
       if (!sortedProjections[date]) {
         sortedProjections[date] = {};
@@ -54,15 +64,36 @@ export default function Projections() {
     return sortedProjections;
   }
 
-
-  //console.log(getSortedProjections());
-
   return (
     <>
-      <div className="container">
-        {Object.keys(getSortedProjections()).map((date, i) => {
-          return (<ProjectionsTimetable projections={getSortedProjections()} date={date} />)
-        })}
+      <div className='container'>
+
+        <div className='category-selector-container'>
+          <select className='category-selector' value={s.selectedCategory} onChange={handleSelectChange}>
+            <option value="">All categories</option>
+            {s.categories.map((category) => (
+              <option key={category.id} value={category.title}>
+                {category.title}
+              </option>
+            ))}
+          </select>
+
+        </div>
+
+
+        {s.selectedCategory && (
+          <div className='category-title'>
+            <h3>{s.selectedCategory}</h3>
+          </div>
+        )}
+
+        <div className="container">
+          {Object.keys(getSortedProjections()).map((date, i) => {
+            return (<ProjectionsTimetable projections={getSortedProjections()} date={date} />)
+          })}
+
+        </div>
+
 
       </div>
     </>
