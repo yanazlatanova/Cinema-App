@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useStates } from '../utilities/states';
 
 import Movie from "../components/Movie";
-import Test from "../components/Test";
 
 export default function ProjectionsTimetable({ projections, date }) {
 
