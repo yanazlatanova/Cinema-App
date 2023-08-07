@@ -4,6 +4,7 @@ import { useStates } from '../utilities/states';
 
 // import our Movie component
 import ProjectionsTimetable from "../components/ProjectionsTimetable";
+import Header from "../components/Header";
 
 export default function Projections() {
 
@@ -66,6 +67,8 @@ export default function Projections() {
 
   return (
     <>
+    <Header/>
+
       <div className='container'>
 
         <div className='category-selector-container'>
