@@ -8,7 +8,6 @@ export default function Movie({ projection }) {
     const s = useStates('main');
     const movie = s.movies.find(movie => movie.id === projection.movieId);
 
-    console.log(movie.description.posterImage);
     const posterImage = 'https://cinema-rest.nodehill.se' + movie.description.posterImage;
 
     function formatMovieLength(minutes) {
