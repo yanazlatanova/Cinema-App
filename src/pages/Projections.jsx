@@ -41,7 +41,7 @@ export default function Projections() {
       const minutes = screening.time.slice(14, 16);
       const movie = s.movies.find(m => m.id === screening.movieId)
 
-      // Skip the movies that are not from the selecte category
+      // Skip the movies that are not from the selected category
       if (s.selectedCategory && movie && !movie.description.categories.includes(s.selectedCategory)) {
         return;
       }

@@ -1,13 +1,11 @@
 .category-selector-container {
-    text-align: right;
-    /* Align the content to the right */
+    text-align: right; /* align the content to the right */
     margin: 20px;
 }
 
 .category-selector {
     font-size: 16px;
-    padding: 10px 20px;
-    /* Padding to make the dropdown larger */
+    padding: 10px 20px; /* make the dropdown larger */
     width: 200px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -21,19 +19,12 @@
 
 .category-title {
     text-align: center;
-    /* Center the content horizontally */
     margin-top: 20px;
-    /* Add some top margin for spacing */
 }
 
 .category-title h3 {
     font-family: 'Your Cool Font', sans-serif;
-    /* Use the cool font from Google Fonts */
     text-transform: uppercase;
-    /* Convert text to capital letters */
     font-size: 24px;
-    /* Adjust font size as needed */
     color: #333;
-    /* Set the desired font color */
-    /* Add any other styles for the cool font here */
 }
