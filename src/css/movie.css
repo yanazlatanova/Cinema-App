@@ -16,11 +16,18 @@
 
 /* For small screen */
 @media (max-width: 764px) {
-    .movie img {
-        width: 100%;
+    .movie .btn-book {
+        margin: 5%;
+        /* Adjust the font size for mobile devices */
     }
 
+    .movie img {
+      width: 100%;
+    }
+    
     .movie {
+        width: 200px;
         margin: 5%;
     }
-  }
+
+}

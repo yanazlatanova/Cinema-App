@@ -3,23 +3,3 @@
   line-height: 1.5;
   font-weight: 400;
 }
-
-/* Media query for mobile phones */
-@media (max-width: 767px) {
-  .movie .btn-book {
-    margin: 5%;
-    /* Adjust the font size for mobile devices */
-  }
-
-  .movie img {
-    width: 200px;
-  }
-
-  .movie {
-    width: 200px;
-  }
-
-  .movies-by-hours{
-    margin-top: 5%;
-  }  
-}
