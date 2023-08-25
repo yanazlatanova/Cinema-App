@@ -1,0 +1,26 @@
+<Movie key={projection.id} title={projection.title} description={projection.description} />   
+
+let { title, description } = props;
+    let { posterImage } = description;
+    let { categories } = description;
+    let { length } = description;
+
+
+/// Get category by id
+ <h2>Dropdown Menu</h2>
+
+        <select value={s.selectedCategoryID} onChange={handleSelectChange}>
+          <option value="">All categories</option>
+          {s.categories.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.title}
+            </option>
+          ))}
+        </select>
+        
+        {s.selectedCategoryID && (
+          <div>
+            <h3>{s.categories.find((category) => category.id === Number(s.selectedCategoryID)).title}</h3>
+            <p>{s.categories.find((category) => category.id === Number(s.selectedCategoryID)).description}</p>
+          </div>
+        )}

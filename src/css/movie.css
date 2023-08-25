@@ -13,3 +13,14 @@
 .movie .length {
     font-size: 1em !important;
 }
+
+/* For small screen */
+@media (max-width: 764px) {
+    .movie img {
+        width: 100%;
+    }
+
+    .movie {
+        margin: 5%;
+    }
+  }

@@ -14,3 +14,14 @@
 .movies-by-hours {
     margin-top: 2%;
 }
+
+/* For small screen */
+@media (max-width: 764px) {
+    .movies-by-date {
+        margin-top: 10%;
+    }
+
+    .movies-by-hours {
+        margin-top: 8%;
+    }
+  }
