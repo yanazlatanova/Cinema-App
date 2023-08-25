@@ -52,8 +52,3 @@ To run the program, follow these steps:
 ## Future Features
 
 - Tickets booking system
-
-## Contact
-
-For assistance, email yana.zlatanova.gold@gmail.com
-
